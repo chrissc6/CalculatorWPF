@@ -25,6 +25,53 @@ namespace CalculatorWPF
             InitializeComponent();
 
             resultLabel.Content = "0";
+
+            acButton.Click += AcButton_Click;
+            negButton.Click += NegButton_Click;
+            percentButton.Click += PercentButton_Click;
+            equalButton.Click += EqualButton_Click;
+        }
+
+        private void EqualButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void PercentButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+                lastNumber = lastNumber / 100;
+                resultLabel.Content = lastNumber.ToString();
+            }
+        }
+
+        double lastNumber, result;
+
+        private void NegButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+                lastNumber = lastNumber * -1;
+                resultLabel.Content = lastNumber.ToString();
+            }
+        }
+
+        private void AcButton_Click(object sender, RoutedEventArgs e)
+        {
+            resultLabel.Content = "0";
+        }
+
+        private void sevenButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(resultLabel.Content.ToString() == "0")
+            {
+                resultLabel.Content = "7";
+            }
+            else
+            {
+                resultLabel.Content = $"{resultLabel.Content}7";
+            }
         }
     }
 }
