@@ -42,15 +42,17 @@
                 Grid.Row="1"
                 Grid.Column="3"/>
         <Button x:Name="sevenButton" Content="7"
-                Click="sevenButton_Click"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="0"/>
         <Button x:Name="eightButton" Content="8"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="1"/>
         <Button x:Name="nineButton" Content="9"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="2"/>
@@ -59,14 +61,17 @@
                 Grid.Row="2"
                 Grid.Column="3"/>
         <Button x:Name="fourButton" Content="4"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="0"/>
         <Button x:Name="fiveButton" Content="5"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="1"/>
         <Button x:Name="sixButton" Content="6"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="2"/>
@@ -75,14 +80,17 @@
                 Grid.Row="3"
                 Grid.Column="3"/>
         <Button x:Name="oneButton" Content="1"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="0"/>
         <Button x:Name="twoButton" Content="2"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="1"/>
         <Button x:Name="threeButton" Content="3"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="2"/>
@@ -91,6 +99,7 @@
                 Grid.Row="4"
                 Grid.Column="3"/>
         <Button x:Name="zeroButton" Content="0"
+                Click="NumButton_Click"
                 Margin="5"
                 Grid.Row="5"
                 Grid.ColumnSpan="2"/>

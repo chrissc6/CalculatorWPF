@@ -37,16 +37,6 @@ namespace CalculatorWPF
             minusButton.Click += MinusButton_Click;
             addButton.Click += AddButton_Click;
             pointButton.Click += PointButton_Click;
-            oneButton.Click += OneButton_Click;
-            twoButton.Click += TwoButton_Click;
-            threeButton.Click += ThreeButton_Click;
-            fourButton.Click += FourButton_Click;
-            fiveButton.Click += FiveButton_Click;
-            sixButton.Click += SixButton_Click;
-            //seven done
-            eightButton.Click += EightButton_Click;
-            nineButton.Click += NineButton_Click;
-            zeroButton.Click += ZeroButton_Click;
         }
 
         
@@ -104,61 +94,29 @@ namespace CalculatorWPF
             resultLabel.Content = "0";
         }
 
-        private void ZeroButton_Click(object sender, RoutedEventArgs e)
+        private void NumButton_Click(object sender, RoutedEventArgs e)
         {
+            int value = 0;
 
-        }
+            if (sender == zeroButton) value = 0;
+            if (sender == oneButton) value = 1;
+            if (sender == twoButton) value = 2;
+            if (sender == threeButton) value = 3;
+            if (sender == fourButton) value = 4;
+            if (sender == fiveButton) value = 5;
+            if (sender == sixButton) value = 6;
+            if (sender == sevenButton) value = 7;
+            if (sender == eightButton) value = 8;
+            if (sender == nineButton) value = 9;
 
-        private void NineButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void EightButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void sevenButton_Click(object sender, RoutedEventArgs e)
-        {
             if (resultLabel.Content.ToString() == "0")
             {
-                resultLabel.Content = "7";
+                resultLabel.Content = value;
             }
             else
             {
-                resultLabel.Content = $"{resultLabel.Content}7";
+                resultLabel.Content = $"{resultLabel.Content}{value}";
             }
-        }
-
-        private void SixButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FiveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FourButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ThreeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TwoButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void OneButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
