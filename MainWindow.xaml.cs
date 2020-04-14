@@ -40,7 +40,14 @@ namespace CalculatorWPF
 
         private void PointButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if(resultLabel.Content.ToString().Contains("."))
+            {
+                //
+            }
+            else
+            {
+                resultLabel.Content = $"{resultLabel.Content}.";
+            }
         }
 
         private void EqualButton_Click(object sender, RoutedEventArgs e)
