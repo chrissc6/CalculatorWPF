@@ -21,6 +21,7 @@ namespace CalculatorWPF
     public partial class MainWindow : Window
     {
         double lastNumber, result;
+        MyOperator myOp;
 
         public MainWindow()
         {
@@ -44,7 +45,30 @@ namespace CalculatorWPF
 
         private void EqualButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            double newNum;
+
+            if (double.TryParse(resultLabel.Content.ToString(), out newNum))
+            {
+                switch (myOp)
+                {
+                    case MyOperator.Addition:
+                        result = MyMath.Add(lastNumber, newNum);
+                        break;
+                    case MyOperator.Subtraction:
+                        result = MyMath.Sub(lastNumber, newNum);
+                        break;
+                    case MyOperator.Multiplication:
+                        result = MyMath.Mul(lastNumber, newNum);
+                        break;
+                    case MyOperator.Division:
+                        result = MyMath.Div(lastNumber, newNum);
+                        break;
+                    default:
+                        break;
+                }
+
+                resultLabel.Content = result.ToString();
+            }
         }
 
         private void PercentButton_Click(object sender, RoutedEventArgs e)
@@ -72,7 +96,15 @@ namespace CalculatorWPF
 
         private void OperationButton_Click(object sender, RoutedEventArgs e)
         {
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+                resultLabel.Content = "0";
+            }
 
+            if (sender == addButton) myOp = MyOperator.Addition;
+            if (sender == minusButton) myOp = MyOperator.Subtraction;
+            if (sender == mulButton) myOp = MyOperator.Multiplication;
+            if (sender == divButton) myOp = MyOperator.Division;
         }
 
         private void NumButton_Click(object sender, RoutedEventArgs e)
@@ -98,6 +130,37 @@ namespace CalculatorWPF
             {
                 resultLabel.Content = $"{resultLabel.Content}{value}";
             }
+        }
+    }
+
+    public enum MyOperator
+    {
+        Addition,
+        Subtraction,
+        Multiplication,
+        Division
+    }
+
+    public class MyMath
+    {
+        public static double Add(double x, double y)
+        {
+            return x + y;
+        }
+
+        public static double Sub(double x, double y)
+        {
+            return x - y;
+        }
+
+        public static double Mul(double x, double y)
+        {
+            return x * y;
+        }
+
+        public static double Div(double x, double y)
+        {
+            return x / y;
         }
     }
 }
