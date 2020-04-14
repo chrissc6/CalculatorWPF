@@ -36,8 +36,6 @@ namespace CalculatorWPF
             pointButton.Click += PointButton_Click;
         }
 
-        
-
         private void PointButton_Click(object sender, RoutedEventArgs e)
         {
             if(resultLabel.Content.ToString().Contains("."))
@@ -167,6 +165,11 @@ namespace CalculatorWPF
 
         public static double Div(double x, double y)
         {
+            if (x == 0 || y == 0)
+            {
+                MessageBox.Show("Divided by zero", "Lol", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
             return x / y;
         }
     }
