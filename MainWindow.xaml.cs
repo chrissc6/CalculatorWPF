@@ -78,10 +78,14 @@ namespace CalculatorWPF
 
         private void PercentButton_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            // 40 + 4% (1.6) = 41.6
+            double tempNum;
+
+            if (double.TryParse(resultLabel.Content.ToString(), out tempNum))
             {
-                lastNumber = lastNumber / 100;
-                resultLabel.Content = lastNumber.ToString();
+                tempNum = tempNum / 100;
+                if (lastNumber != 0) tempNum *= lastNumber;
+                resultLabel.Content = tempNum.ToString();
             }
         }
 
@@ -97,6 +101,8 @@ namespace CalculatorWPF
         private void AcButton_Click(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "0";
+            result = 0;
+            lastNumber = 0;
         }
 
         private void OperationButton_Click(object sender, RoutedEventArgs e)
@@ -168,6 +174,7 @@ namespace CalculatorWPF
             if (x == 0 || y == 0)
             {
                 MessageBox.Show("Divided by zero", "Lol", MessageBoxButton.OK, MessageBoxImage.Information);
+                return 0;
             }
 
             return x / y;
