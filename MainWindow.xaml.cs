@@ -32,36 +32,12 @@ namespace CalculatorWPF
             negButton.Click += NegButton_Click;
             percentButton.Click += PercentButton_Click;
             equalButton.Click += EqualButton_Click;
-            divButton.Click += DivButton_Click;
-            mulButton.Click += MulButton_Click;
-            minusButton.Click += MinusButton_Click;
-            addButton.Click += AddButton_Click;
             pointButton.Click += PointButton_Click;
         }
 
         
 
         private void PointButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void MulButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void DivButton_Click(object sender, RoutedEventArgs e)
         {
             
         }
@@ -92,6 +68,11 @@ namespace CalculatorWPF
         private void AcButton_Click(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "0";
+        }
+
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void NumButton_Click(object sender, RoutedEventArgs e)
