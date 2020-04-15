@@ -7,5 +7,15 @@
         <SolidColorBrush x:Key="numColor" Color="DimGray"/>
         <SolidColorBrush x:Key="otherColor" Color="Silver"/>
         <SolidColorBrush x:Key="textColor" Color="Black"/>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Ivory"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="70"/>
+        </Style>
     </Application.Resources>
 </Application>
