@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:CalculatorWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="numColor" Color="DimGray"/>
+        <SolidColorBrush x:Key="otherColor" Color="Silver"/>
+        <SolidColorBrush x:Key="textColor" Color="Black"/>
     </Application.Resources>
 </Application>
